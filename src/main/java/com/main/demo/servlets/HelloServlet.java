@@ -21,7 +21,7 @@ public class HelloServlet extends HttpServlet {
         resp.setContentType("text/html");
 
         //Get the stream for writing data
-        PrintWriter pw=resp.getWriter();
+        PrintWriter pw = resp.getWriter();
 
         pw.println("<html><body>");
         pw.println("Hello first servlet !!!");
