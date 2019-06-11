@@ -3,6 +3,12 @@ Demo application for experimenting with Java technologies.
 **********************************************************************************************
 This instructions assume PostgreSQL server is already installed on MacOS.
 
+PostgreSQL version:PostgreSQL 11.2
+
+PostgreSQL installation location:https://www.postgresql.org/download/macosx/
+
+pgadmin4 installation location:https://www.postgresql.org/ftp/pgadmin/pgadmin4/v4.8/macos/
+
 PostgreSQL home directory:/usr/local/var/postgres
 
 Start PostgreSQL server on local environment:pg_ctl -D /usr/local/var/postgres start
@@ -21,3 +27,17 @@ Step 2:Create role postgres :CREATE USER postgres WITH SUPERUSER PASSWORD 'passw
 
 Step 3:Connect to PostgreSQL server from pgadmin4
 **********************************************************************************************
+CREATE TABLE public.users
+(
+    id integer NOT NULL,
+    name text COLLATE pg_catalog."default" NOT NULL,
+    phone_number text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT users_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.users
+    OWNER to postgres;
