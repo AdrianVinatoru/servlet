@@ -18,12 +18,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void saveUser(User user) {
         userDao.saveUser(user);
-        List<User> findAllUsers=userDao.findAllUsers();
     }
 
     @Override
     public List<User> findAllUsers() {
-        //@todoL:implementation will follow
-        return null;
+        List<User> users=userDao.findAllUsers();
+        return users;
     }
 }

@@ -50,7 +50,7 @@ public class UserDaoImpl implements UserDao {
     public void saveUser(User user) {
         try {
             String query = String
-                    .format("INSERT INTO public.users(id,name,phone_number) VALUES ('%s','%s', '%s');", 1, user.getName(), user.getPhoneNumber());
+                    .format("INSERT INTO public.users(id,name,phone_number) VALUES ('%s','%s', '%s');", user.getId(), user.getName(), user.getPhoneNumber());
             Connection connection = DbConnection.getConnection();
             Statement statement = connection.createStatement();
             statement.execute(query);
