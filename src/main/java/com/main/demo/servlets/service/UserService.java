@@ -9,4 +9,10 @@ public interface UserService {
     void saveUser(User user);
 
     List<User> findAllUsers();
+
+    User findUserById(Integer id);
+
+    void deleteUser(User user);
+
+    int totalUsers();
 }

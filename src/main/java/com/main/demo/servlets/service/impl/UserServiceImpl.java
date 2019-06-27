@@ -25,4 +25,19 @@ public class UserServiceImpl implements UserService {
         List<User> users=userDao.findAllUsers();
         return users;
     }
+
+    @Override
+    public User findUserById(Integer id) {
+        return userDao.getUserById(id);
+    }
+
+    @Override
+    public void deleteUser(User user) {
+        userDao.deleteUser(user.getId());
+    }
+
+    @Override
+    public int totalUsers() {
+        return userDao.findAllUsers().size();
+    }
 }
