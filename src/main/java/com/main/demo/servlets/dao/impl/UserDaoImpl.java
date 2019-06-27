@@ -49,8 +49,10 @@ public class UserDaoImpl implements UserDao {
             while (resultSet.next()) {
                 user = createUserFrom(resultSet);
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException("Could not execute statement", e);
+        } finally {
+            DbConnection.closeConnection(connection);
         }
 
         return user;
